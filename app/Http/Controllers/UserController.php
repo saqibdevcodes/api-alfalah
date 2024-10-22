@@ -106,16 +106,24 @@ class UserController extends Controller
         // Check if the request has a file for 'photo'
         if ($request->hasFile('photo')) {
             try {
+                // Find the user by ID
+                $user = User::find($request->user_id);
+
+                // Check if the user already has an avatar
+                if ($user->avatar) {
+                    // Delete the existing avatar from storage
+                    $relativePath = str_replace('/storage/profile_photos/', '', $user->avatar);
+
+                    // Delete the existing avatar from storage
+                    // dd($relativePath);
+                    Storage::disk('public')->delete($relativePath);
+                }
                 // Store the uploaded photo in the 'profile_photos' directory within the public disk
                 $link = $request->file('photo')->store('profile_photos', 'public');
-                // $link = Storage::put('profile_photos', $request->file('photo'));
-                // add this link with userid to database
 
-                $user = User::where('id', $request->user_id)->first();
-                $path = $link;
-                $user->avatar = $path;
+                // Update the user's avatar path in the database
+                $user->avatar = $link;
                 $user->save();
-
 
                 // Return a success response
                 return response()->json([
@@ -135,6 +143,7 @@ class UserController extends Controller
             'message' => 'No photo file found in the request'
         ], 400);
     }
+
 
     public function profile(Request $request)
     {

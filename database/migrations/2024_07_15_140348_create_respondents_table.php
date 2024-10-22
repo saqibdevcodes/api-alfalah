@@ -46,6 +46,7 @@ class CreateRespondentsTable extends Migration
             $table->string('credit_card_payment')->nullable();
             $table->date('Date');
             $table->string('turn_around_time_mins');
+            $table->string('branch_type')->nullable();
             $table->timestamps();
         });
     }

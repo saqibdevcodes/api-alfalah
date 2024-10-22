@@ -14,7 +14,9 @@ class RespondentController extends Controller
     {
         // $filePath = database_path('seeders/data.xlsx');
 
-
+        // $email = $request->email;
+        // $file = $request->file('file');
+        // dd($email, $file->getClientOriginalName());
         // Validate the uploaded file
         $request->validate([
             'file' => 'required|mimes:xlsx'
@@ -88,6 +90,7 @@ class RespondentController extends Controller
                 'turn_around_time' => $row[36] == 1 ? 'Highly dissatisfied' : ($row[36] == 2 ? 'Somewhat Dissatisfied' : ($row[36] == 3 ? 'Neither Satisfied nor Dissatisfied' : ($row[36] == 4 ? 'Somewhat Satisfied' : 'Highly satisfied'))),
                 //Q#12
                 'over_all_satisfactory' => $row[37] == 1 ? 'Highly dissatisfied' : ($row[37] == 2 ? 'Somewhat Dissatisfied' : ($row[37] == 3 ? 'Neither Satisfied nor Dissatisfied' : ($row[37] == 4 ? 'Somewhat Satisfied' : 'Highly satisfied'))),
+                'branch_type' => $row[50] == 1 ? 'Conventional' : ($row[50] == 2 ? 'Islamic' : 'Corporate'),
 
             ]);
         }

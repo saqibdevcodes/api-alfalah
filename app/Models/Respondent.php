@@ -50,6 +50,7 @@ class Respondent extends Model
         'receive_ATM',
         'credit_card_payment',
         'turn_around_time_mins',
+        'branch_type',
 
     ];
 }
