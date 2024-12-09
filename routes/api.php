@@ -4,6 +4,7 @@ use App\Http\Controllers\RespondentController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
+use SebastianBergmann\CodeCoverage\Report\Xml\Report;
 
 /*
 |--------------------------------------------------------------------------
@@ -28,3 +29,4 @@ Route::post('/import', [RespondentController::class, 'import'])->name('import');
 Route::get('/get-gender', [RespondentController::class, 'get_gender'])->name('gender');
 Route::post('/upload-photo', [UserController::class, 'uploadPhoto']);
 Route::post('/user-profile', [UserController::class, 'profile']);
+Route::delete('/clear', [RespondentController::class, 'clear_db'])->name('clear');
