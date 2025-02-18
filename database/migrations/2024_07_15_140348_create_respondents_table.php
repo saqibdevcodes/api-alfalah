@@ -68,6 +68,11 @@ class CreateRespondentsTable extends Migration
             $table->string('eobi_payment')->nullable();
             $table->string('alfalah_app_issue')->nullable();
             $table->string('check_transfer')->nullable();
+            $table->string('cdm_machine_complain')->nullable();
+            $table->string('trade_document_submission')->nullable();
+            $table->string('insurance_policy_info')->nullable();
+            $table->string('prize_bond_encashment')->nullable();
+
             $table->timestamps();
         });
     }

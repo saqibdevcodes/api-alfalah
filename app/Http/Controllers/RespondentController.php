@@ -92,11 +92,14 @@ class RespondentController extends Controller
                 'balance_inquiry' => ($row[5] == 43 || $row[6] == 43 || $row[7] == 43 || $row[8] == 43) ? 'Yes' : 'null',
                 'eobi_payment' => ($row[5] == 44 || $row[6] == 44 || $row[7] == 44 || $row[8] == 44) ? 'Yes' : 'null',
                 'alfalah_app_issue' => ($row[5] == 45 || $row[6] == 45 || $row[7] == 45 || $row[8] == 45) ? 'Yes' : 'null',
-                'check_transfer' => ($row[5] == 46 || $row[6] == 46 || $row[7] == 46 || $row[8] == 46) ? 'Yes' : 'null',
+                'cdm_machine_complain' => ($row[5] == 46 || $row[6] == 46 || $row[7] == 46 || $row[8] == 46) ? 'Yes' : 'null',
+                'trade_document_submission' => ($row[5] == 47 || $row[6] == 47 || $row[7] == 47 || $row[8] == 47) ? 'Yes' : 'null',
+                'insurance_policy_info' => ($row[5] == 48 || $row[6] == 48 || $row[7] == 48 || $row[8] == 48) ? 'Yes' : 'null',
+                'prize_bond_encashment' => ($row[5] == 49 || $row[6] == 49 || $row[7] == 49 || $row[8] == 49) ? 'Yes' : 'null',
                 // End
                 // End Of file
                 'Date' => $formattedDate,
-                'city' => $row[44] == 1 ? 'Karachi' : ($row[44] == 2 ? 'Lahore' : 'Islamabad'),
+                'city' => $row[44] == 1 ? 'Karachi' : ($row[44] == 2 ? 'Lahore' : ($row[44] == 3 ? 'Islamabad' : ($row[44] == 4 ? 'Faisalabad' : 'Multan'))),
                 // 'branch' => $row[46] == 30 ? 'Shahrah-e-Faisal, Karachi' : ($row[46] == 425 ? 'Z Block DHA Phase III, Lahore' : 'I-10 Markaz, Islamabad'), //fetching with branch code
                 'branch' => $row[45],
                 //Q#6

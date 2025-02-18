@@ -71,6 +71,10 @@ class Respondent extends Model
         'balance_inquiry',
         'eobi_payment',
         'alfalah_app_issue',
-        'check_transfer'
+        'check_transfer',
+        'cdm_machine_complain',
+        'trade_document_submission',
+        'insurance_policy_info',
+        'prize_bond_encashment',
     ];
 }
