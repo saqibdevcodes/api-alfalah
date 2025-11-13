@@ -76,5 +76,9 @@ class Respondent extends Model
         'trade_document_submission',
         'insurance_policy_info',
         'prize_bond_encashment',
+        'call_center_experience',
+        'online_banking_experience',
+        'atm_services_experience',
+        'others',
     ];
 }

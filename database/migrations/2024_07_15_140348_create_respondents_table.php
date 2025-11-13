@@ -13,7 +13,7 @@ class CreateRespondentsTable extends Migration
             $table->string('gender');
             $table->string('account_holder');
             $table->string('city');
-            $table->string('branch');
+            $table->string('branch')->nullable();
             $table->string('staff_interaction');
             $table->string('purpose_of_visit');
             $table->string('turn_around_time');
@@ -72,6 +72,10 @@ class CreateRespondentsTable extends Migration
             $table->string('trade_document_submission')->nullable();
             $table->string('insurance_policy_info')->nullable();
             $table->string('prize_bond_encashment')->nullable();
+            $table->string('call_center_experience')->nullable();
+            $table->string('online_banking_experience')->nullable();
+            $table->string('atm_services_experience')->nullable();
+            $table->string('others')->nullable();
 
             $table->timestamps();
         });

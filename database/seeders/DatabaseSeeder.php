@@ -21,5 +21,11 @@ class DatabaseSeeder extends Seeder
             'password' => Hash::make('Mangoman987'),
             'role' => 'admin', // Manually assign admin role
         ]);
+        User::create([
+            'name' => 'User',
+            'email' => 'user@iris.com',
+            'password' => Hash::make('Mangoman987'),
+            'role' => 'user', // Manually assign admin role
+        ]);
     }
 }

@@ -29,6 +29,8 @@ class RespondentController extends Controller
         // Skip the header row
         $header = array_shift($data);
         $header2 = array_shift($data);
+        $header3 = array_shift($data);
+
 
         // Assuming the data is in the second column and needs to be mapped to gender
         foreach ($data as $row) {
@@ -65,43 +67,47 @@ class RespondentController extends Controller
                 'money_pay_order' => ($row[5] == 15 || $row[6] == 15 || $row[7] == 15 || $row[8] == 15) ? 'Yes' : 'null',
                 'safe_deposit' => ($row[5] == 16 || $row[6] == 16 || $row[7] == 16 || $row[8] == 16) ? 'Yes' : 'null',
                 'payment_dues' => ($row[5] == 17 || $row[6] == 17 || $row[7] == 17 || $row[8] == 17) ? 'Yes' : 'null',
-                'cheque_deposit' => ($row[5] == 18 || $row[6] == 18 || $row[7] == 18 || $row[8] == 18) ? 'Yes' : 'null',
-                'issuance_cheque_book' => ($row[5] == 19 || $row[6] == 19 || $row[7] == 19 || $row[8] == 19) ? 'Yes' : 'null',
-                'bank_statement' => ($row[5] == 20 || $row[6] == 20 || $row[7] == 20 || $row[8] == 20) ? 'Yes' : 'null',
-                'online_transaction' => ($row[5] == 21 || $row[6] == 21 || $row[7] == 21 || $row[8] == 21) ? 'Yes' : 'null',
-                'installment_plot' => ($row[5] == 22 || $row[6] == 22 || $row[7] == 22 || $row[8] == 22) ? 'Yes' : 'null',
-                'receive_atm' => ($row[5] == 23 || $row[6] == 23 || $row[7] == 23 || $row[8] == 23) ? 'Yes' : 'null',
-                'credit_card_payment' => ($row[5] == 24 || $row[6] == 24 || $row[7] == 24 || $row[8] == 24) ? 'Yes' : 'null',
-                'biometric_purpose' => ($row[5] == 25 || $row[6] == 25 || $row[7] == 25 || $row[8] == 25) ? 'Yes' : 'null',
-                'tax_payment' => ($row[5] == 26 || $row[6] == 26 || $row[7] == 26 || $row[8] == 26) ? 'Yes' : 'null',
-                'info_new_account' => ($row[5] == 27 || $row[6] == 27 || $row[7] == 27 || $row[8] == 27) ? 'Yes' : 'null',
-                'reactivation_dormant_acc' => ($row[5] == 29 || $row[6] == 29 || $row[7] == 29 || $row[8] == 29) ? 'Yes' : 'null',
-                'policy_cancellation' => ($row[5] == 30 || $row[6] == 30 || $row[7] == 30 || $row[8] == 30) ? 'Yes' : 'null',
-                'receive_maintenance_certificate' => ($row[5] == 31 || $row[6] == 31 || $row[7] == 31 || $row[8] == 31) ? 'Yes' : 'null',
-                'activation_atm_card' => ($row[5] == 32 || $row[6] == 32 || $row[7] == 32 || $row[8] == 32) ? 'Yes' : 'null',
-                'receiving_pay_order' => ($row[5] == 33 || $row[6] == 33 || $row[7] == 33 || $row[8] == 33) ? 'Yes' : 'null',
-                'opening_new_acc_friend/relative' => ($row[5] == 34 || $row[6] == 34 || $row[7] == 34 || $row[8] == 34) ? 'Yes' : 'null',
-                'deactivation_atm_card' => ($row[5] == 35 || $row[6] == 35 || $row[7] == 35 || $row[8] == 35) ? 'Yes' : 'null',
-                'cancellation_insurance_policy' => ($row[5] == 36 || $row[6] == 36 || $row[7] == 36 || $row[8] == 36) ? 'Yes' : 'null',
-                'car_financing_info' => ($row[5] == 37 || $row[6] == 37 || $row[7] == 37 || $row[8] == 37) ? 'Yes' : 'null',
-                'doc_submission' => ($row[5] == 38 || $row[6] == 38 || $row[7] == 38 || $row[8] == 38) ? 'Yes' : 'null',
-                'pension_card_isuance' => ($row[5] == 39 || $row[6] == 39 || $row[7] == 39 || $row[8] == 39) ? 'Yes' : 'null',
-                'to_unblock_account' => ($row[5] == 40 || $row[6] == 40 || $row[7] == 40 || $row[8] == 40) ? 'Yes' : 'null',
-                'issuance_ATM_card' => ($row[5] == 41 || $row[6] == 41 || $row[7] == 41 || $row[8] == 41) ? 'Yes' : 'null',
-                'credit_card_machine_upgradation' => ($row[5] == 42 || $row[6] == 42 || $row[7] == 42 || $row[8] == 42) ? 'Yes' : 'null',
-                'balance_inquiry' => ($row[5] == 43 || $row[6] == 43 || $row[7] == 43 || $row[8] == 43) ? 'Yes' : 'null',
-                'eobi_payment' => ($row[5] == 44 || $row[6] == 44 || $row[7] == 44 || $row[8] == 44) ? 'Yes' : 'null',
-                'alfalah_app_issue' => ($row[5] == 45 || $row[6] == 45 || $row[7] == 45 || $row[8] == 45) ? 'Yes' : 'null',
-                'cdm_machine_complain' => ($row[5] == 46 || $row[6] == 46 || $row[7] == 46 || $row[8] == 46) ? 'Yes' : 'null',
-                'trade_document_submission' => ($row[5] == 47 || $row[6] == 47 || $row[7] == 47 || $row[8] == 47) ? 'Yes' : 'null',
-                'insurance_policy_info' => ($row[5] == 48 || $row[6] == 48 || $row[7] == 48 || $row[8] == 48) ? 'Yes' : 'null',
-                'prize_bond_encashment' => ($row[5] == 49 || $row[6] == 49 || $row[7] == 49 || $row[8] == 49) ? 'Yes' : 'null',
+                //other should save other than number 1-17
+                'others' => ($row[5] > 17 || $row[6] > 17 || $row[7] > 17 || $row[8] > 17) ? 'Yes' : 'null',
+
+                // --- IGNORE ---
+                // 'cheque_deposit' => ($row[5] == 18 || $row[6] == 18 || $row[7] == 18 || $row[8] == 18) ? 'Yes' : 'null',
+                // 'issuance_cheque_book' => ($row[5] == 19 || $row[6] == 19 || $row[7] == 19 || $row[8] == 19) ? 'Yes' : 'null',
+                // 'bank_statement' => ($row[5] == 20 || $row[6] == 20 || $row[7] == 20 || $row[8] == 20) ? 'Yes' : 'null',
+                // 'online_transaction' => ($row[5] == 21 || $row[6] == 21 || $row[7] == 21 || $row[8] == 21) ? 'Yes' : 'null',
+                // 'installment_plot' => ($row[5] == 22 || $row[6] == 22 || $row[7] == 22 || $row[8] == 22) ? 'Yes' : 'null',
+                // 'receive_atm' => ($row[5] == 23 || $row[6] == 23 || $row[7] == 23 || $row[8] == 23) ? 'Yes' : 'null',
+                // 'credit_card_payment' => ($row[5] == 24 || $row[6] == 24 || $row[7] == 24 || $row[8] == 24) ? 'Yes' : 'null',
+                // 'biometric_purpose' => ($row[5] == 25 || $row[6] == 25 || $row[7] == 25 || $row[8] == 25) ? 'Yes' : 'null',
+                // 'tax_payment' => ($row[5] == 26 || $row[6] == 26 || $row[7] == 26 || $row[8] == 26) ? 'Yes' : 'null',
+                // 'info_new_account' => ($row[5] == 27 || $row[6] == 27 || $row[7] == 27 || $row[8] == 27) ? 'Yes' : 'null',
+                // 'reactivation_dormant_acc' => ($row[5] == 29 || $row[6] == 29 || $row[7] == 29 || $row[8] == 29) ? 'Yes' : 'null',
+                // 'policy_cancellation' => ($row[5] == 30 || $row[6] == 30 || $row[7] == 30 || $row[8] == 30) ? 'Yes' : 'null',
+                // 'receive_maintenance_certificate' => ($row[5] == 31 || $row[6] == 31 || $row[7] == 31 || $row[8] == 31) ? 'Yes' : 'null',
+                // 'activation_atm_card' => ($row[5] == 32 || $row[6] == 32 || $row[7] == 32 || $row[8] == 32) ? 'Yes' : 'null',
+                // 'receiving_pay_order' => ($row[5] == 33 || $row[6] == 33 || $row[7] == 33 || $row[8] == 33) ? 'Yes' : 'null',
+                // 'opening_new_acc_friend/relative' => ($row[5] == 34 || $row[6] == 34 || $row[7] == 34 || $row[8] == 34) ? 'Yes' : 'null',
+                // 'deactivation_atm_card' => ($row[5] == 35 || $row[6] == 35 || $row[7] == 35 || $row[8] == 35) ? 'Yes' : 'null',
+                // 'cancellation_insurance_policy' => ($row[5] == 36 || $row[6] == 36 || $row[7] == 36 || $row[8] == 36) ? 'Yes' : 'null',
+                // 'car_financing_info' => ($row[5] == 37 || $row[6] == 37 || $row[7] == 37 || $row[8] == 37) ? 'Yes' : 'null',
+                // 'doc_submission' => ($row[5] == 38 || $row[6] == 38 || $row[7] == 38 || $row[8] == 38) ? 'Yes' : 'null',
+                // 'pension_card_isuance' => ($row[5] == 39 || $row[6] == 39 || $row[7] == 39 || $row[8] == 39) ? 'Yes' : 'null',
+                // 'to_unblock_account' => ($row[5] == 40 || $row[6] == 40 || $row[7] == 40 || $row[8] == 40) ? 'Yes' : 'null',
+                // 'issuance_ATM_card' => ($row[5] == 41 || $row[6] == 41 || $row[7] == 41 || $row[8] == 41) ? 'Yes' : 'null',
+                // 'credit_card_machine_upgradation' => ($row[5] == 42 || $row[6] == 42 || $row[7] == 42 || $row[8] == 42) ? 'Yes' : 'null',
+                // 'balance_inquiry' => ($row[5] == 43 || $row[6] == 43 || $row[7] == 43 || $row[8] == 43) ? 'Yes' : 'null',
+                // 'eobi_payment' => ($row[5] == 44 || $row[6] == 44 || $row[7] == 44 || $row[8] == 44) ? 'Yes' : 'null',
+                // 'alfalah_app_issue' => ($row[5] == 45 || $row[6] == 45 || $row[7] == 45 || $row[8] == 45) ? 'Yes' : 'null',
+                // 'cdm_machine_complain' => ($row[5] == 46 || $row[6] == 46 || $row[7] == 46 || $row[8] == 46) ? 'Yes' : 'null',
+                // 'trade_document_submission' => ($row[5] == 47 || $row[6] == 47 || $row[7] == 47 || $row[8] == 47) ? 'Yes' : 'null',
+                // 'insurance_policy_info' => ($row[5] == 48 || $row[6] == 48 || $row[7] == 48 || $row[8] == 48) ? 'Yes' : 'null',
+                // 'prize_bond_encashment' => ($row[5] == 49 || $row[6] == 49 || $row[7] == 49 || $row[8] == 49) ? 'Yes' : 'null',
                 // End
                 // End Of file
                 'Date' => $formattedDate,
                 'city' => $row[44] == 1 ? 'Karachi' : ($row[44] == 2 ? 'Lahore' : ($row[44] == 3 ? 'Islamabad' : ($row[44] == 4 ? 'Faisalabad' : 'Multan'))),
                 // 'branch' => $row[46] == 30 ? 'Shahrah-e-Faisal, Karachi' : ($row[46] == 425 ? 'Z Block DHA Phase III, Lahore' : 'I-10 Markaz, Islamabad'), //fetching with branch code
-                'branch' => $row[45],
+                'branch' => isset($row[45]) && $row[45] !== '' ? $row[45] : null,
                 //Q#6
                 'purpose_of_visit' => $row[23] == 1 ? 'Highly dissatisfied' : ($row[23] == 2 ? 'Somewhat Dissatisfied' : ($row[23] == 3 ? 'Neither Satisfied nor Dissatisfied' : ($row[23] == 4 ? 'Somewhat Satisfied' : 'Highly satisfied'))),
                 // Q#8
@@ -114,7 +120,12 @@ class RespondentController extends Controller
                 //Q#12
                 'over_all_satisfactory' => $row[37] == 1 ? 'Highly dissatisfied' : ($row[37] == 2 ? 'Somewhat Dissatisfied' : ($row[37] == 3 ? 'Neither Satisfied nor Dissatisfied' : ($row[37] == 4 ? 'Somewhat Satisfied' : 'Highly satisfied'))),
                 'branch_type' => $row[50] == 1 ? 'Conventional' : ($row[50] == 2 ? 'Islamic' : 'Corporate'),
-
+                //Q#20
+                'call_center_experience' => $row[52] == 1 ? 'Highly dissatisfied' : ($row[52] == 2 ? 'Somewhat Dissatisfied' : ($row[52] == 3 ? 'Neither Satisfied nor Dissatisfied' : ($row[52] == 4 ? 'Somewhat Satisfied' : 'Highly satisfied'))),
+                // Q#23
+                'online_banking_experience' => $row[53] == 1 ? 'Highly dissatisfied' : ($row[53] == 2 ? 'Somewhat Dissatisfied' : ($row[53] == 3 ? 'Neither Satisfied nor Dissatisfied' : ($row[53] == 4 ? 'Somewhat Satisfied' : 'Highly satisfied'))),
+                // Q#27
+                'atm_services_experience' => $row[54] == 1 ? 'Highly dissatisfied' : ($row[54] == 2 ? 'Somewhat Dissatisfied' : ($row[54] == 3 ? 'Neither Satisfied nor Dissatisfied' : ($row[54] == 4 ? 'Somewhat Satisfied' : 'Highly satisfied'))),
             ]);
         }
         return view('success_upload');
