@@ -120,12 +120,12 @@ class RespondentController extends Controller
                 //Q#12
                 'over_all_satisfactory' => $row[37] == 1 ? 'Highly dissatisfied' : ($row[37] == 2 ? 'Somewhat Dissatisfied' : ($row[37] == 3 ? 'Neither Satisfied nor Dissatisfied' : ($row[37] == 4 ? 'Somewhat Satisfied' : 'Highly satisfied'))),
                 'branch_type' => $row[50] == 1 ? 'Conventional' : ($row[50] == 2 ? 'Islamic' : 'Corporate'),
-                //Q#20
-                'call_center_experience' => $row[52] == 1 ? 'Highly dissatisfied' : ($row[52] == 2 ? 'Somewhat Dissatisfied' : ($row[52] == 3 ? 'Neither Satisfied nor Dissatisfied' : ($row[52] == 4 ? 'Somewhat Satisfied' : 'Highly satisfied'))),
+                //Q#20 also add -99 to the data
+                'call_center_experience' => $row[52] == 1 ? 'Highly dissatisfied' : ($row[52] == 2 ? 'Somewhat Dissatisfied' : ($row[52] == 3 ? 'Neither Satisfied nor Dissatisfied' : ($row[52] == 4 ? 'Somewhat Satisfied' : ($row[52] == -99 ? '-99' : 'Highly satisfied')))),
                 // Q#23
-                'online_banking_experience' => $row[53] == 1 ? 'Highly dissatisfied' : ($row[53] == 2 ? 'Somewhat Dissatisfied' : ($row[53] == 3 ? 'Neither Satisfied nor Dissatisfied' : ($row[53] == 4 ? 'Somewhat Satisfied' : 'Highly satisfied'))),
+                'online_banking_experience' => $row[53] == 1 ? 'Highly dissatisfied' : ($row[53] == 2 ? 'Somewhat Dissatisfied' : ($row[53] == 3 ? 'Neither Satisfied nor Dissatisfied' : ($row[53] == 4 ? 'Somewhat Satisfied' : ($row[53] == -99 ? '-99' : 'Highly satisfied')))),
                 // Q#27
-                'atm_services_experience' => $row[54] == 1 ? 'Highly dissatisfied' : ($row[54] == 2 ? 'Somewhat Dissatisfied' : ($row[54] == 3 ? 'Neither Satisfied nor Dissatisfied' : ($row[54] == 4 ? 'Somewhat Satisfied' : 'Highly satisfied'))),
+                'atm_services_experience' => $row[54] == 1 ? 'Highly dissatisfied' : ($row[54] == 2 ? 'Somewhat Dissatisfied' : ($row[54] == 3 ? 'Neither Satisfied nor Dissatisfied' : ($row[54] == 4 ? 'Somewhat Satisfied' : ($row[54] == -99 ? '-99' : 'Highly satisfied')))),
             ]);
         }
         return view('success_upload');
