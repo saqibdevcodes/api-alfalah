@@ -31,6 +31,15 @@ class RespondentController extends Controller
         $header2 = array_shift($data);
         $header3 = array_shift($data);
 
+        $cityMap = [
+            1 => 'Karachi',
+            2 => 'Lahore',
+            3 => 'Islamabad',
+            4 => 'Rawalpindi',
+            5 => 'Faisalabad',
+            6 => 'Multan',
+            7 => 'Sialkot',
+        ];
 
         // Assuming the data is in the second column and needs to be mapped to gender
         foreach ($data as $row) {
@@ -105,7 +114,7 @@ class RespondentController extends Controller
                 // End
                 // End Of file
                 'Date' => $formattedDate,
-                'city' => $row[44] == 1 ? 'Karachi' : ($row[44] == 2 ? 'Lahore' : ($row[44] == 3 ? 'Islamabad' : ($row[44] == 4 ? 'Faisalabad' : 'Multan'))),
+                'city' => $cityMap[$row[44]] ?? 'Other',
                 // 'branch' => $row[46] == 30 ? 'Shahrah-e-Faisal, Karachi' : ($row[46] == 425 ? 'Z Block DHA Phase III, Lahore' : 'I-10 Markaz, Islamabad'), //fetching with branch code
                 'branch' => isset($row[45]) && $row[45] !== '' ? $row[45] : null,
                 //Q#6
